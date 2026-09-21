@@ -9,8 +9,6 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Payment extends Model
 {
-    use HasFactory;
-
     public const TYPE_CARD = 'card';
     public const TYPE_SBP = 'sbp';
     public const TYPE_PROMO = 'promo';

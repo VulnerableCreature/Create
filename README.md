@@ -90,8 +90,7 @@ docker run --rm hello-world
 ### Шаг 1. Зависимости
 
 ```bash
-docker run --rm -v "$PWD:/app" -w /app composer:2 composer install
-```
+docker run --rm -v "Q:\Projects\Create:/app" -w /app composer:2 composer install
 
 В PowerShell вместо `$PWD` подставьте полный путь: `-v "C:\путь\к\проекту:/app"`.
 Займёт минуту-две, качается Laravel.
@@ -99,7 +98,7 @@ docker run --rm -v "$PWD:/app" -w /app composer:2 composer install
 ### Шаг 2. Конфиг и база
 
 ```bash
-docker run --rm -v "$PWD:/app" -w /app php:8.3-cli sh -c "\
+docker run --rm -v "Q:\Projects\Create:/app" -w /app php:8.3-cli sh -c "\
   cp -n .env.example .env; \
   php artisan key:generate --force; \
   touch database/database.sqlite; \
@@ -109,7 +108,7 @@ docker run --rm -v "$PWD:/app" -w /app php:8.3-cli sh -c "\
 ### Шаг 3. Сервер
 
 ```bash
-docker run --rm -p 8000:8000 -v "$PWD:/app" -w /app php:8.3-cli \
+docker run --rm -p 8000:8000 -v "Q:\Projects\Create:/app" -w /app php:8.3-cli \
   php artisan serve --host=0.0.0.0 --port=8000
 ```
 

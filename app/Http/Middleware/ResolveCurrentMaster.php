@@ -14,7 +14,7 @@ class ResolveCurrentMaster
         $masterId = $request->header('X-Master-Id');
 
         if (!empty($masterId)) {
-            $request->attributes->set('current_master', Master::find($masterId));
+            $request->attributes->set('current_master', Master::query()->find($masterId));
         }
 
         return $next($request);

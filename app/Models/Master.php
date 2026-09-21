@@ -9,8 +9,6 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Master extends Model
 {
-    use HasFactory;
-
     protected $fillable = [
         'name',
         'referral_code',
